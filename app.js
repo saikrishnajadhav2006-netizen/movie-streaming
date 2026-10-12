@@ -1684,6 +1684,54 @@ async function loadMoviePosters(){
  await Promise.all(Array.from({length:Math.min(3,movies.length)},()=>worker()));
  renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();
 }
+async function loadBollywoodMovies(){
+ const status=$("#bollywood-status"),root=$("#bollywood-grid");
+ if(!root)return;
+ const apiKey="6d8b16070fcc71ae643cb5e6ebf96c70";
+ const genres={28:"Action",18:"Drama",35:"Comedy",10749:"Romance",53:"Thriller",12:"Adventure",14:"Fantasy",80:"Crime",9648:"Mystery"};
+ try{
+  const url="https://api.themoviedb.org/3/discover/movie?api_key="+encodeURIComponent(apiKey)+"&include_adult=false&include_video=false&language=hi-IN&region=IN&sort_by=popularity.desc&with_original_language=hi&page=1";
+  const response=await fetch(url);
+  if(!response.ok)throw new Error("TMDB HTTP "+response.status);
+  const data=await response.json();
+  const picks=(data.results||[]).filter(item=>item.poster_path&&item.title&&item.release_date).slice(0,12);
+  let nextId=1001;
+  for(const item of picks){
+   const year=Number(item.release_date.slice(0,4));
+   const exists=movies.some(m=>m.title.toLowerCase()===item.title.toLowerCase()&&m.year===year);
+   if(exists)continue;
+   movies.push({
+    id:nextId++,title:item.title,language:"Hindi",year,
+    genre:(item.genre_ids||[]).map(id=>genres[id]).find(Boolean)||"Drama",
+    cast:"Bollywood",wikiTitle:item.title,rating:item.vote_average||"",
+    duration:"",symbol:(item.title||"B").trim().charAt(0).toUpperCase(),label:"HINDI",
+    description:item.overview||item.title+" is a Hindi-language film.",
+    poster:"linear-gradient(145deg,#a74b82,#161522 82%)",
+    posterUrl:"https://image.tmdb.org/t/p/w500"+item.poster_path,
+    tmdbId:item.id
+   });
+  }
+  const added=movies.filter(m=>m.id>=1001);
+  renderMovies("#bollywood-grid",added);
+  renderCatalogue();
+  if(status)status.textContent=added.length+" MOVIES · TMDB";
+ }catch(error){
+  console.warn("Could not load Bollywood titles",error);
+  if(status)status.textContent="Bollywood picks unavailable right now";
+ }
+}
+function initTheme(){
+ const saved=localStorage.getItem("aniplexTheme");
+ const apply=theme=>{
+  document.body.dataset.theme=theme;
+  const button=$("#theme-toggle");
+  if(button){const light=theme==="light";button.textContent=light?"☾":"☀";button.setAttribute("aria-label",light?"Switch to dark mode":"Switch to light mode");button.title=light?"Switch to dark mode":"Switch to light mode";}
+  localStorage.setItem("aniplexTheme",theme);
+ };
+ apply(saved==="light"?"light":"dark");
+ $("#theme-toggle")?.addEventListener("click",()=>apply(document.body.dataset.theme==="light"?"dark":"light"));
+}
+
 function initForms(){
  $("#register-form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTarget;const data=Object.fromEntries(new FormData(f));const msg=$("#register-message");msg.classList.remove("success");let error="";if(data.name.trim().length<2)error="Enter a name with at least 2 characters.";else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))error="Enter a valid email address.";else if(data.password.length<8)error="Password must contain at least 8 characters.";else if(data.password!==data.confirmPassword)error="Passwords do not match.";if(error){msg.textContent=error;return}const profiles=JSON.parse(localStorage.getItem("aniplexProfiles")||"[]");if(profiles.some(p=>p.email.toLowerCase()===data.email.toLowerCase())){msg.textContent="An account with this email already exists in this browser.";return}profiles.push({name:data.name.trim(),email:data.email,password:data.password});localStorage.setItem("aniplexProfiles",JSON.stringify(profiles));msg.textContent="Account created in this browser. You can sign in now.";msg.classList.add("success");f.reset();showToast("Welcome to Aniplex — account created!")});
  $("#login-form").addEventListener("submit",e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.currentTarget));const profiles=JSON.parse(localStorage.getItem("aniplexProfiles")||"[]");const profile=profiles.find(p=>p.email.toLowerCase()===data.email.toLowerCase()&&p.password===data.password);const msg=$("#login-message");if(!profile){msg.textContent="Details not found. Register first or check your entries.";msg.classList.remove("success");return}msg.textContent=`Welcome back, ${profile.name}! Demo sign-in successful.`;msg.classList.add("success");showToast(`Welcome back, ${profile.name}!`)});
@@ -1695,4 +1743,4 @@ $("#dialog-close").addEventListener("click",()=>$("#movie-dialog").close());$("#
 $("#menu-toggle").addEventListener("click",()=>{const open=$(".nav-links").classList.toggle("open");$("#menu-toggle").setAttribute("aria-expanded",String(open))});
 $("#search-toggle").addEventListener("click",()=>{navigate("catalogue");history.replaceState(null,"","#catalogue");$("#movie-search").focus()});
 window.addEventListener("hashchange",()=>navigate(location.hash.slice(1)||"home"));
-renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();loadMoviePosters();navigate(location.hash.slice(1)||"home");
+renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();initTheme();loadMoviePosters().then(loadBollywoodMovies);navigate(location.hash.slice(1)||"home");
