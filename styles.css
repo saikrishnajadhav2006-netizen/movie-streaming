@@ -95,3 +95,39 @@ body[data-theme="light"] .anime-card h3{color:#21182b}
 body[data-theme="light"] .bollywood-live{font-size:10px;color:var(--muted);letter-spacing:1px}
 .bollywood-section{padding-top:35px;padding-bottom:36px}
 @media(prefers-reduced-motion:reduce){#theme-toggle{transition:none}}
+
+
+/* Rengoku looping 3D-style animated scene */
+.rengoku-scene{position:relative;isolation:isolate;min-height:450px;aspect-ratio:16/7;overflow:hidden;border:1px solid #ff874d35;border-radius:18px;background:radial-gradient(ellipse at 73% 53%,#c64a1d55 0,transparent 37%),radial-gradient(ellipse at 60% 100%,#f04e2229 0,transparent 42%),linear-gradient(115deg,#090a12 0%,#20101b 48%,#100d16 100%);box-shadow:0 24px 80px #0008;perspective:1100px}
+.rengoku-scene:before{content:'';position:absolute;inset:0;z-index:0;opacity:.25;background:repeating-linear-gradient(115deg,transparent 0 34px,#ffb24b17 35px 36px,transparent 37px 74px);animation:scene-rays 12s linear infinite}
+.scene-stars{position:absolute;inset:0;background-image:radial-gradient(#fff8 1px,transparent 1.5px),radial-gradient(#ffb45b99 1px,transparent 1.5px);background-size:53px 53px,89px 89px;background-position:0 0,22px 30px;opacity:.45;animation:stars-drift 20s linear infinite}
+.scene-moon{position:absolute;width:clamp(140px,20vw,250px);height:clamp(140px,20vw,250px);right:19%;top:10%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe7ba,#ff8d4a 58%,#b62d2a);box-shadow:0 0 45px #ff6b3155,0 0 120px #e4442855;animation:moon-pulse 5s ease-in-out infinite}
+.rengoku-art-wrap{position:absolute;z-index:3;left:42%;top:-4%;height:108%;width:43%;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d;animation:rengoku-float 5.5s ease-in-out infinite}
+.rengoku-art{height:100%;width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 18px 30px #f25a2a4d);transform:translateZ(65px) rotateY(-5deg);animation:rengoku-breathe 5.5s ease-in-out infinite}
+.flame-ring{position:absolute;z-index:2;left:47%;top:7%;width:39%;height:83%;border:8px solid transparent;border-radius:50%;transform:rotate(-23deg) rotateY(35deg);filter:drop-shadow(0 0 9px #ff692a) drop-shadow(0 0 24px #ff3b1855)}
+.flame-ring-back{border-left-color:#ff6a2b;border-top-color:#ffc15b;border-bottom-color:#cf2f20;animation:flame-orbit 7s linear infinite}
+.flame-ring-front{left:44%;top:17%;width:43%;height:72%;border-right-color:#ffb347;border-bottom-color:#ff4c25;border-top-color:#ffdc82;border-width:4px;animation:flame-orbit 5s linear infinite reverse}
+.rengoku-scene-copy{position:absolute;z-index:5;left:5%;top:22%;max-width:35%;text-shadow:0 3px 24px #0009}
+.rengoku-scene-copy .eyebrow{color:#ffb76a}
+.rengoku-scene-copy h3{font:700 clamp(26px,3.6vw,52px)/1.05 'Space Grotesk',sans-serif;letter-spacing:-2px;margin:10px 0}
+.rengoku-scene-copy h3 em{font-style:normal;color:#ff9356}
+.rengoku-scene-copy p:not(.eyebrow){font-size:13px;color:#e8dce0;max-width:300px}
+.rengoku-scene-copy a{display:inline-flex;margin-top:12px;padding:10px 14px;border:1px solid #ffb76a66;border-radius:9px;background:#ff6b2520;color:#ffe0c0;font-size:12px}
+.scene-ember{position:absolute;z-index:4;bottom:-20px;width:7px;height:16px;border-radius:100% 0 100% 0;background:#ffb347;box-shadow:0 0 16px #ff5b25;animation:ember-rise 5s linear infinite}
+.ember-one{left:48%;animation-delay:-1s}.ember-two{left:60%;animation-delay:-3s}.ember-three{left:73%;animation-delay:-2s}.ember-four{left:86%;animation-delay:-4s}.ember-five{left:38%;animation-delay:-2.7s}
+.rengoku-scene .rengoku-video-caption{position:absolute;z-index:6;bottom:0;left:0;right:0;background:linear-gradient(90deg,#080810dd,#08081099);border-top:1px solid #ffffff14}
+@keyframes rengoku-float{0%,100%{transform:translateY(7px) rotateY(-3deg)}50%{transform:translateY(-9px) rotateY(3deg)}}
+@keyframes rengoku-breathe{0%,100%{transform:translateZ(65px) scale(1)}50%{transform:translateZ(95px) scale(1.025)}}
+@keyframes flame-orbit{from{transform:rotate(-23deg) rotateY(35deg)}to{transform:rotate(337deg) rotateY(35deg)}}
+@keyframes ember-rise{0%{opacity:0;transform:translateY(0) rotate(0) scale(.6)}15%{opacity:1}100%{opacity:0;transform:translateY(-470px) translateX(-25px) rotate(240deg) scale(1.4)}}
+@keyframes scene-rays{from{transform:translateX(-5%)}to{transform:translateX(5%)}}
+@keyframes stars-drift{from{background-position:0 0,22px 30px}to{background-position:53px -106px,111px -148px}}
+@keyframes moon-pulse{0%,100%{transform:scale(.98);filter:brightness(.95)}50%{transform:scale(1.04);filter:brightness(1.15)}}
+.anime-poster-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .4s ease}
+.anime-poster:has(.anime-poster-image):before{opacity:.18}
+.anime-poster:after{z-index:1;pointer-events:none}
+.anime-poster span{z-index:2;text-shadow:0 2px 12px #000}
+.anime-poster-image:not([src]),.anime-poster-image[src=""]{display:none}
+@media(max-width:800px){.rengoku-scene{aspect-ratio:4/3;min-height:390px}.rengoku-art-wrap{left:39%;width:55%;height:90%;top:0}.rengoku-scene-copy{max-width:43%;top:24%}.scene-moon{right:8%;top:9%}.flame-ring{left:38%;width:55%}}
+@media(max-width:520px){.rengoku-scene{aspect-ratio:auto;min-height:440px}.rengoku-scene-copy{left:5%;top:7%;max-width:85%}.rengoku-scene-copy h3{font-size:30px}.rengoku-scene-copy p:not(.eyebrow){max-width:220px}.rengoku-art-wrap{left:26%;top:18%;height:83%;width:74%}.flame-ring{left:27%;top:25%;width:70%;height:58%}.flame-ring-front{left:23%;top:30%;width:76%;height:53%}.scene-moon{width:130px;height:130px;right:7%;top:28%}.rengoku-scene .rengoku-video-caption{font-size:8px;letter-spacing:.5px}.rengoku-video-caption{gap:5px}}
+@media(prefers-reduced-motion:reduce){.rengoku-scene *, .rengoku-scene:before{animation:none!important;transition:none!important}}
