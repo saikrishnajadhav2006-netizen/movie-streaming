@@ -1,0 +1,4 @@
+ANIPLEX — ASYNC TEXT RESPONSE
+This text was loaded asynchronously using the Fetch API.
+The request is handled with fetch(), response.ok, and response.text().
+No page reload is required. Run the site through a local HTTP server to try this experiment.
