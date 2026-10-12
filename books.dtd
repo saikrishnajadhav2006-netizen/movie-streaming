@@ -1,0 +1,9 @@
+<!ELEMENT bookstore (book+)>
+<!ELEMENT book (title, author, price, year)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book category (web|programming|data) #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price currency CDATA "INR">
+<!ELEMENT year (#PCDATA)>
