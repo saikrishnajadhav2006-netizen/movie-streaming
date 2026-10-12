@@ -21,7 +21,9 @@ Then open `http://localhost:5500`.
 - **Home:** featured collection and project introduction.
 - **Sign in:** browser-only demonstration login.
 - **Register:** client-side validation for name, email, password length, and matching passwords.
-- **Explore:** movie cards, search, genre filtering, and ratings.
+- **Explore:** 100 Indian films across Telugu, Tamil, Malayalam, Kannada, Hindi, Bengali, Marathi, Punjabi, Assamese, and Odia cinema; search, language and genre filters.
+- **Movie details:** select a film to view its cast and open a JustWatch India availability search or YouTube trailer search. Aniplex does not host copyrighted video.
+- **Posters:** poster thumbnails are looked up from Wikipedia page images at runtime; unavailable images use a designed fallback. Internet access is required.
 - **Lab Experiments:** Week 1–10 experiment log plus buttons for text, JSON, XML, and POST demonstrations.
 
 ## Experiment index
@@ -52,7 +54,7 @@ Then open `http://localhost:5500`.
 
 ## Important limitations
 
-- This is a **front-end learning prototype**, not a real streaming service. Movie titles/posters are illustrative; playback, subscriptions, and licensed video delivery are not implemented.
+- This is a **front-end learning prototype**, not a real streaming service. This is a discovery catalogue, not a licensed streaming service. Availability links search JustWatch India; trailer links search YouTube. Actual playback is provided only by rights-holding services.
 - Login and registration use browser `localStorage` for demonstration only. The demo stores the password in plain text, so **never use real credentials**. A production application needs a backend, password hashing, HTTPS, secure sessions, and a database.
 - Week 10 uses the public JSONPlaceholder testing API and requires internet access.
 - Some browsers restrict XML external DTD resolution. Use a dedicated XML validator to validate `books.xml` against `books.dtd`.
