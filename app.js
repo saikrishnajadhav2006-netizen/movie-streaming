@@ -1617,6 +1617,16 @@ const experiments = [
 const $ = (selector, root=document) => root.querySelector(selector);
 const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
 function showToast(message){const toast=$("#toast");toast.textContent=message;toast.classList.add("show");clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove("show"),2600)}
+function navigate(view){
+ const valid=["home","catalogue","experiments","login","register"];
+ const page=valid.includes(view)?view:"home";
+ document.querySelectorAll(".view").forEach(el=>el.classList.toggle("active-view",el.id==="view-"+page));
+ document.querySelectorAll(".nav-link").forEach(el=>el.classList.toggle("active",el.dataset.view===page));
+ document.querySelectorAll("[data-view]").forEach(el=>{if(el.closest(".nav-links"))el.classList.toggle("active",el.dataset.view===page)});
+ document.querySelector(".nav-links")?.classList.remove("open");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(page==="catalogue")renderCatalogue();
+}
 function renderMovies(target,list){
  const root=$(target);if(!root)return;
  root.innerHTML=list.map(m=>`<article class="movie-card" tabindex="0" role="button" aria-label="Open details for ${m.title}" data-movie="${m.id}"><div class="poster" style="--poster:${m.poster}">${m.posterUrl?`<img class="poster-image" src="${m.posterUrl}" alt="${m.title} poster" loading="lazy" onerror="this.remove()">`:""}<span class="poster-stamp">${m.language.toUpperCase()}</span><span class="poster-symbol">${m.symbol}</span><span class="poster-play">▶</span><div class="poster-bottom"><small>${m.genre.toUpperCase()} · ${m.year}</small><h3>${m.title}</h3></div></div><div class="movie-meta"><span>${m.cast.split(",")[0]}</span><span>${m.year}</span></div></article>`).join("");
@@ -1637,17 +1647,21 @@ function openMovie(movie){
  const dialog=$("#movie-dialog");
  $("#dialog-poster").innerHTML=movie.posterUrl?`<img src="${movie.posterUrl}" alt="${movie.title} poster">`:`<div class="dialog-poster-fallback" style="background:${movie.poster}"><span>${movie.title}</span></div>`;
  $("#dialog-language").textContent=movie.language+" · "+movie.year+" · "+movie.genre;$("#dialog-title").textContent=movie.title;$("#dialog-cast").textContent="Starring: "+movie.cast;$("#dialog-description").textContent=movie.description;
- $("#dialog-watch").href="https://www.justwatch.com/in/search?q="+encodeURIComponent(movie.title);$("#dialog-trailer").href="https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" "+movie.language+" official trailer");dialog.showModal();
+ $("#dialog-watch").href="https://www.justwatch.com/in/search?q="+encodeURIComponent(movie.title);$("#dialog-trailer").href="https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" "+movie.language+" official trailer");$("#dialog-watch").href="https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" "+movie.language+" full movie official");$("#dialog-watch").textContent="Find movie on YouTube ↗";dialog.showModal();
 }
 async function loadMoviePosters(){
- const chunks=[];for(let i=0;i<movies.length;i+=20)chunks.push(movies.slice(i,i+20));
- for(const batch of chunks){try{
-  const url="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=500&titles="+encodeURIComponent(batch.map(m=>m.wikiTitle).join("|"));
-  const response=await fetch(url);if(!response.ok)continue;const json=await response.json(),alias={};
-  (json.query?.normalized||[]).forEach(x=>alias[x.from.toLowerCase()]=x.to);(json.query?.redirects||[]).forEach(x=>alias[x.from.toLowerCase()]=x.to);
-  const pages=Object.values(json.query?.pages||{}),byTitle=new Map(pages.map(p=>[p.title.toLowerCase(),p]));
-  for(const movie of batch){let key=movie.wikiTitle;for(let n=0;n<4&&alias[key.toLowerCase()];n++)key=alias[key.toLowerCase()];const page=byTitle.get(key.toLowerCase());if(page?.thumbnail?.source)movie.posterUrl=page.thumbnail.source;}
- }catch(error){console.warn("Poster lookup unavailable",error)}}
+ // Try the exact Wikipedia article first, then search for the film title if the article has no thumbnail.
+ const jobs=movies.map(async movie=>{
+  const endpoint="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=700&titles="+encodeURIComponent(movie.wikiTitle);
+  try{
+   let response=await fetch(endpoint);if(response.ok){let data=await response.json();let page=Object.values(data.query?.pages||{})[0];if(page?.thumbnail?.source){movie.posterUrl=page.thumbnail.source;return;}}
+   const search="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch="+encodeURIComponent('"'+movie.title+'" film')+"&prop=pageimages&piprop=thumbnail&pithumbsize=700";
+   response=await fetch(search);if(!response.ok)return;const data=await response.json();const pages=Object.values(data.query?.pages||{});const exact=pages.find(p=>p.title.toLowerCase().includes(movie.title.toLowerCase())&&p.thumbnail?.source)||pages.find(p=>p.thumbnail?.source);if(exact?.thumbnail?.source)movie.posterUrl=exact.thumbnail.source;
+  }catch(error){console.warn("Poster lookup unavailable for "+movie.title,error);}
+ });
+ // Render immediately and progressively replace placeholders as poster results arrive.
+ renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();
+ await Promise.allSettled(jobs);
  renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();
 }
 function initForms(){
@@ -1661,4 +1675,4 @@ $("#dialog-close").addEventListener("click",()=>$("#movie-dialog").close());$("#
 $("#menu-toggle").addEventListener("click",()=>{const open=$(".nav-links").classList.toggle("open");$("#menu-toggle").setAttribute("aria-expanded",String(open))});
 $("#search-toggle").addEventListener("click",()=>{navigate("catalogue");history.replaceState(null,"","#catalogue");$("#movie-search").focus()});
 window.addEventListener("hashchange",()=>navigate(location.hash.slice(1)||"home"));
-renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();loadMoviePosters();if(location.hash)navigate(location.hash.slice(1));
+renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();loadMoviePosters();navigate(location.hash.slice(1)||"home");
