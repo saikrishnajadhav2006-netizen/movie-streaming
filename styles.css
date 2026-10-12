@@ -37,3 +37,5 @@
 .dialog-poster img{object-fit:cover}
 @media(hover:none){.movie-card:hover{transform:none}.movie-card:hover .poster{transform:none}.movie-card:hover .poster-image{transform:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.tmdb-attribution{display:block;max-width:var(--max);margin:12px auto 0;padding:0 24px;color:var(--muted);font-size:10px}.tmdb-attribution a{text-decoration:underline;color:var(--text)}
