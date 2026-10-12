@@ -49,7 +49,7 @@
 
     <section class="view section-wrap page-view" id="view-catalogue" data-page="catalogue">
       <div class="page-intro"><p class="eyebrow">THE COLLECTION</p><h1>Find your <em>next world.</em></h1><p class="muted">Browse the collection, search titles, or filter by genre.</p></div>
-      <div class="catalogue-tools"><label class="search-field"><span>⌕</span><input id="movie-search" type="search" placeholder="Search movies, genres, moods…" aria-label="Search movies"></label><select id="genre-filter" aria-label="Filter by genre"><option value="All">All genres</option><option>Adventure</option><option>Fantasy</option><option>Drama</option><option>Action</option><option>Sci-Fi</option></select></div>
+      <div class="catalogue-tools"><label class="search-field"><span>⌕</span><input id="movie-search" type="search" placeholder="Search movies, genres, moods…" aria-label="Search movies"></label><select id="language-filter" aria-label="Filter by language"><option value="All">All languages</option><option>Telugu</option><option>Tamil</option><option>Malayalam</option><option>Kannada</option><option>Hindi</option><option>Bengali</option><option>Marathi</option><option>Punjabi</option><option>Assamese</option><option>Odia</option></select><select id="genre-filter" aria-label="Filter by genre"><option value="All">All genres</option><option>Adventure</option><option>Fantasy</option><option>Drama</option><option>Action</option><option>Sci-Fi</option></select></div>
       <p id="results-label" class="results-label">THE COLLECTION</p><div class="movie-grid" id="catalogue-grid"></div><p class="empty-state hidden" id="empty-state">No titles match that search. Try another word.</p>
     </section>
 
@@ -71,6 +71,6 @@
   </main>
 
   <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">A</span><span>ani<span class="brand-accent">plex</span></span></a><p>A student Web Technology project · Made for stories and learning.</p><div><a href="#experiments" data-view="experiments">Lab journal</a><a href="#catalogue" data-view="catalogue">Collection</a></div><small>© 2026 Aniplex Student Project. Demo titles and metadata are illustrative.</small></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="movie-dialog" id="movie-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="dialog-close" aria-label="Close movie details">×</button><div class="dialog-layout"><div id="dialog-poster" class="dialog-poster"></div><div class="dialog-info"><p class="eyebrow" id="dialog-language"></p><h2 id="dialog-title"></h2><p id="dialog-cast" class="muted"></p><p id="dialog-description"></p><p class="dialog-disclaimer">Aniplex is a discovery demo. Availability depends on your region and subscriptions.</p><div class="dialog-actions"><a class="button button-primary" id="dialog-watch" href="#" target="_blank" rel="noopener noreferrer">Find legal streaming ↗</a><a class="button button-outline" id="dialog-trailer" href="#" target="_blank" rel="noopener noreferrer">Search trailers ↗</a></div></div></div></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
