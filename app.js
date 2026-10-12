@@ -1650,33 +1650,26 @@ function openMovie(movie){
  $("#dialog-watch").href="https://www.justwatch.com/in/search?q="+encodeURIComponent(movie.title);$("#dialog-trailer").href="https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" "+movie.language+" official trailer");$("#dialog-watch").href="https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" "+movie.language+" full movie official");$("#dialog-watch").textContent="Find movie on YouTube ↗";dialog.showModal();
 }
 async function loadMoviePosters(){
- // Keep Wikimedia requests to three concurrent jobs to reduce rate-limit failures.
- async function lookupPoster(movie){
-  const pageUrl="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=700&titles="+encodeURIComponent(movie.wikiTitle);
+ // Use only the image attached to the exact film article. Never substitute a
+ // vaguely related search result, actor photo, or unrelated movie image.
+ async function lookupExactPoster(movie){
+  const endpoint="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=700&titles="+encodeURIComponent(movie.wikiTitle);
   try{
-   let response=await fetch(pageUrl);
-   if(response.ok){
-    const data=await response.json();
-    const page=Object.values(data.query?.pages||{})[0];
-    if(page?.thumbnail?.source){movie.posterUrl=page.thumbnail.source;return;}
-   }
-   const searchUrl="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch="+encodeURIComponent('"'+movie.title+'" film')+"&prop=pageimages&piprop=thumbnail&pithumbsize=700";
-   response=await fetch(searchUrl);
+   const response=await fetch(endpoint);
    if(!response.ok)return;
    const data=await response.json();
-   const pages=Object.values(data.query?.pages||{});
-   const title=movie.title.toLowerCase();
-   const exact=pages.find(p=>p.title.toLowerCase().includes(title)&&p.thumbnail?.source);
-   const result=exact||pages.find(p=>p.thumbnail?.source);
-   if(result?.thumbnail?.source)movie.posterUrl=result.thumbnail.source;
-  }catch(error){console.warn("Poster lookup unavailable for "+movie.title,error);}
+   const page=Object.values(data.query?.pages||{})[0];
+   if(page?.thumbnail?.source)movie.posterUrl=page.thumbnail.source;
+  }catch(error){
+   console.warn("Exact film artwork lookup unavailable for "+movie.title,error);
+  }
  }
  renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();
  let next=0;
  async function worker(){
   while(next<movies.length){
    const movie=movies[next++];
-   await lookupPoster(movie);
+   await lookupExactPoster(movie);
    if(movie.posterUrl){
     renderMovies("#featured-grid",movies.slice(0,4));
     renderCatalogue();
