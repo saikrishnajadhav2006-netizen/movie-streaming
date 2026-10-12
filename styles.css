@@ -64,3 +64,34 @@
 @media(max-width:800px){.anime-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rengoku-video-wrap iframe{aspect-ratio:16/9}.anime-poster{min-height:180px}}
 @media(max-width:520px){.anime-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.anime-poster{min-height:170px}.rengoku-video-caption{font-size:8px;letter-spacing:.7px}.rengoku-feature{padding-top:24px}}
 @media(prefers-reduced-motion:reduce){.anime-poster,.anime-poster:before{transition:none}}
+
+/* Theme toggle and light theme */
+#theme-toggle{font-size:16px;line-height:1;display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:10px}
+body[data-theme="light"]{--bg:#f5f3f8;--panel:#ffffff;--panel2:#ece8f2;--text:#21182b;--muted:#6f667b;--line:#d9d1e4;background:var(--bg);color:var(--text)}
+body[data-theme="light"] .topbar{background:#f5f3f8ed;border-bottom-color:#21182b16}
+body[data-theme="light"] .announcement{background:#e8e0f1;color:#49365f}
+body[data-theme="light"] .nav-link{color:#655b70}
+body[data-theme="light"] .nav-link:hover,body[data-theme="light"] .nav-link.active{color:#21182b}
+body[data-theme="light"] .hero{background:#f5f3f8}
+body[data-theme="light"] .hero-art{background:radial-gradient(ellipse at 65% 48%,#9d3b9d28 0,transparent 40%),radial-gradient(ellipse at 75% 80%,#4238b02b 0,transparent 40%),linear-gradient(110deg,#f5f3f8 0%,#e9e0f3 55%,#f1eaf8 100%)}
+body[data-theme="light"] .hero-art:after{background:linear-gradient(90deg,var(--bg),transparent 35%),linear-gradient(0deg,var(--bg),transparent 22%)}
+body[data-theme="light"] .hero-copy,body[data-theme="light"] .hero-note{color:#655b70}
+body[data-theme="light"] .hero-note strong{color:#21182b}
+body[data-theme="light"] .hero-silhouette{background:linear-gradient(135deg,#d4c5e6,#a89ab9 70%);box-shadow:inset 30px 0 50px #f15e9b12}
+body[data-theme="light"] .hero-silhouette:after{background:#c4b3d9}
+body[data-theme="light"] .quote-band{background:linear-gradient(100deg,#eadcf0,#e7e0f4 60%,#f0e9f8);color:#21182b}
+body[data-theme="light"] .movie-dialog,body[data-theme="light"] .auth-card{background:#fff;color:#21182b;border-color:#d9d1e4}
+body[data-theme="light"] .auth-art{background:linear-gradient(135deg,#e6d8f1,#f8e6ee)}
+body[data-theme="light"] .auth-art h2,body[data-theme="light"] .auth-art p{color:#30223d}
+body[data-theme="light"] .search-field,body[data-theme="light"] .catalogue-tools select,body[data-theme="light"] .auth-card input{background:#fff;color:#21182b;border-color:#d9d1e4}
+body[data-theme="light"] .movie-card{color:#21182b}
+body[data-theme="light"] .movie-meta{color:#6f667b}
+body[data-theme="light"] .footer{background:#ece8f2;color:#6f667b}
+body[data-theme="light"] .footer .brand{color:#21182b}
+body[data-theme="light"] .lab-output,body[data-theme="light"] .experiment-detail{background:#fff;color:#21182b;border-color:#d9d1e4}
+body[data-theme="light"] .rengoku-video-wrap{background:#fff;border-color:#d9d1e4}
+body[data-theme="light"] .rengoku-video-caption{color:#49365f}
+body[data-theme="light"] .anime-card h3{color:#21182b}
+body[data-theme="light"] .bollywood-live{font-size:10px;color:var(--muted);letter-spacing:1px}
+.bollywood-section{padding-top:35px;padding-bottom:36px}
+@media(prefers-reduced-motion:reduce){#theme-toggle{transition:none}}
