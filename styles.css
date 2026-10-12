@@ -39,3 +39,28 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
 .tmdb-attribution{display:block;max-width:var(--max);margin:12px auto 0;padding:0 24px;color:var(--muted);font-size:10px}.tmdb-attribution a{text-decoration:underline;color:var(--text)}
+
+/* Home anime video + series spotlight */
+.rengoku-feature{padding-top:42px;padding-bottom:36px}
+.rengoku-video-wrap{position:relative;overflow:hidden;border:1px solid #ffffff1b;border-radius:18px;background:#100d18;box-shadow:0 24px 70px #0007}
+.rengoku-video-wrap iframe{display:block;width:100%;aspect-ratio:16/7;border:0;background:#100d18}
+.rengoku-video-caption{display:flex;justify-content:space-between;gap:12px;padding:13px 17px;color:#d8c9ed;font-size:10px;letter-spacing:1.4px}
+.anime-spotlight{padding-top:26px;padding-bottom:54px}
+.anime-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.anime-card{min-width:0}
+.anime-poster{position:relative;display:flex;align-items:end;min-height:230px;aspect-ratio:3/4;overflow:hidden;border:1px solid #ffffff16;border-radius:12px;padding:15px;background:#171321;box-shadow:0 10px 30px #0003;transition:transform .25s,box-shadow .25s}
+.anime-poster:before{content:'';position:absolute;inset:0;background:linear-gradient(150deg,#ff4f9a66,transparent 45%),radial-gradient(ellipse at 70% 20%,#a88bff66,transparent 48%),linear-gradient(145deg,#30203f,#0d0b14 85%);transition:transform .35s}
+.anime-poster:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#09070ef2,transparent 70%)}
+.anime-poster span{position:relative;z-index:1;font:700 clamp(15px,2vw,23px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.5px}
+.anime-card:hover .anime-poster{transform:translateY(-5px);box-shadow:0 18px 40px #0008}
+.anime-card:hover .anime-poster:before{transform:scale(1.08)}
+.anime-demon:before{background:radial-gradient(ellipse at 75% 25%,#ff8d3d99,transparent 36%),linear-gradient(140deg,#a8322e,#251522 70%,#09070e)}
+.anime-naruto:before{background:radial-gradient(ellipse at 70% 25%,#ffb62f99,transparent 36%),linear-gradient(140deg,#c96a25,#35202c 70%,#09070e)}
+.anime-onepiece:before{background:radial-gradient(ellipse at 70% 25%,#52c5ff88,transparent 36%),linear-gradient(140deg,#197b9e,#242043 70%,#09070e)}
+.anime-jujutsu:before{background:radial-gradient(ellipse at 70% 25%,#a88bff99,transparent 36%),linear-gradient(140deg,#5946a8,#24172f 70%,#09070e)}
+.anime-aot:before{background:radial-gradient(ellipse at 70% 25%,#b3ad7199,transparent 36%),linear-gradient(140deg,#66715d,#25262b 70%,#09070e)}
+.anime-card h3{font:600 14px 'Space Grotesk',sans-serif;margin:10px 0 6px}
+.anime-card>a{font-size:11px;color:var(--pink)}
+@media(max-width:800px){.anime-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rengoku-video-wrap iframe{aspect-ratio:16/9}.anime-poster{min-height:180px}}
+@media(max-width:520px){.anime-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.anime-poster{min-height:170px}.rengoku-video-caption{font-size:8px;letter-spacing:.7px}.rengoku-feature{padding-top:24px}}
+@media(prefers-reduced-motion:reduce){.anime-poster,.anime-poster:before{transition:none}}
