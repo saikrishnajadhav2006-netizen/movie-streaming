@@ -1720,6 +1720,39 @@ async function loadBollywoodMovies(){
   if(status)status.textContent="Bollywood picks unavailable right now";
  }
 }
+
+async function loadAnimePosters(){
+ const apiKey="6d8b16070fcc71ae643cb5e6ebf96c70";
+ const anime=[
+  {selector:".anime-demon",query:"Demon Slayer Kimetsu no Yaiba"},
+  {selector:".anime-naruto",query:"Naruto"},
+  {selector:".anime-onepiece",query:"One Piece"},
+  {selector:".anime-jujutsu",query:"Jujutsu Kaisen"},
+  {selector:".anime-aot",query:"Attack on Titan"}
+ ];
+ await Promise.all(anime.map(async item=>{
+  try{
+   const response=await fetch("https://api.themoviedb.org/3/search/tv?api_key="+encodeURIComponent(apiKey)+"&query="+encodeURIComponent(item.query)+"&language=en-US");
+   if(!response.ok)return;
+   const data=await response.json();
+   const normalize=value=>(value||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+   const wanted=normalize(item.query);
+   const results=data.results||[];
+   const match=results.find(show=>normalize(show.name)===wanted||normalize(show.original_name)===wanted)||results.find(show=>show.poster_path);
+   if(!match?.poster_path)return;
+   const poster=document.querySelector(item.selector);
+   if(!poster)return;
+   const img=document.createElement("img");
+   img.className="anime-poster-image";
+   img.src="https://image.tmdb.org/t/p/w500"+match.poster_path;
+   img.alt=match.name+" anime poster";
+   img.loading="lazy";
+   img.onerror=()=>img.remove();
+   poster.prepend(img);
+  }catch(error){console.warn("Anime artwork unavailable for "+item.query,error);}
+ }));
+}
+
 function initTheme(){
  const saved=localStorage.getItem("aniplexTheme");
  const apply=theme=>{
@@ -1743,4 +1776,4 @@ $("#dialog-close").addEventListener("click",()=>$("#movie-dialog").close());$("#
 $("#menu-toggle").addEventListener("click",()=>{const open=$(".nav-links").classList.toggle("open");$("#menu-toggle").setAttribute("aria-expanded",String(open))});
 $("#search-toggle").addEventListener("click",()=>{navigate("catalogue");history.replaceState(null,"","#catalogue");$("#movie-search").focus()});
 window.addEventListener("hashchange",()=>navigate(location.hash.slice(1)||"home"));
-renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();initTheme();loadMoviePosters().then(loadBollywoodMovies);navigate(location.hash.slice(1)||"home");
+renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();initTheme();loadMoviePosters().then(loadBollywoodMovies);loadAnimePosters();navigate(location.hash.slice(1)||"home");
