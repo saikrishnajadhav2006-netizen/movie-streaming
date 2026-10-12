@@ -8,3 +8,32 @@
 .poster-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;background:#191927}.poster:has(.poster-image):before{opacity:.22}.poster:has(.poster-image) .poster-symbol{display:none}.poster-stamp,.poster-bottom{z-index:2}.poster-play{z-index:3}.catalogue-tools select{min-width:130px}
 .movie-dialog{width:min(850px,calc(100% - 30px));max-width:850px;padding:0;border:1px solid #4a3a5b;border-radius:16px;background:#11101a;color:var(--text);box-shadow:0 30px 100px #000b;overflow:visible}.movie-dialog::backdrop{background:#05040ad9;backdrop-filter:blur(7px)}.dialog-close{position:absolute;right:12px;top:10px;width:36px;height:36px;border-radius:50%;border:1px solid #ffffff2b;background:#0c0b14dd;color:white;font-size:25px;z-index:4}.dialog-layout{display:grid;grid-template-columns:minmax(190px,.8fr) 1.2fr;gap:27px;padding:26px}.dialog-poster{min-height:310px;border-radius:10px;overflow:hidden;background:#191927}.dialog-poster img{width:100%;height:100%;min-height:310px;object-fit:cover;display:block}.dialog-poster-fallback{height:100%;min-height:310px;display:flex;align-items:end;padding:18px;font:700 26px 'Space Grotesk';background-size:cover}.dialog-info{padding:22px 14px 10px 0}.dialog-info h2{font:600 35px/1.1 'Space Grotesk';margin:0 0 10px;letter-spacing:-1px}.dialog-info>p:not(.eyebrow){font-size:12px;color:#c7bfd1;line-height:1.8}.dialog-disclaimer{border-left:2px solid var(--violet);padding-left:10px;font-size:10px!important}.dialog-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.dialog-actions .button{font-size:10px}.movie-card:focus-visible{outline:2px solid var(--pink);outline-offset:4px;border-radius:12px}
 @media(max-width:600px){.catalogue-tools{display:grid;grid-template-columns:1fr 1fr}.catalogue-tools .search-field{grid-column:1/-1}.catalogue-tools select{min-width:0;height:42px}.dialog-layout{grid-template-columns:100px 1fr;gap:15px;padding:16px}.dialog-poster,.dialog-poster img,.dialog-poster-fallback{min-height:155px}.dialog-info{padding:25px 0 0}.dialog-info h2{font-size:23px}.dialog-actions{flex-direction:column}.dialog-actions .button{width:100%}}
+
+
+/* Aniplex visual polish: visible artwork, cinematic depth and accessible motion. */
+.poster{isolation:isolate;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.75,.25,1),box-shadow .45s}
+.poster:before{z-index:0;pointer-events:none}
+.poster:after{z-index:1;pointer-events:none;background:linear-gradient(180deg,#08071110 0%,#08071100 35%,#080711e8 100%)}
+.poster-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;opacity:1;transition:transform .8s cubic-bezier(.2,.75,.25,1),filter .5s;filter:saturate(.92) contrast(1.03)}
+.poster-stamp,.poster-symbol,.poster-play,.poster-bottom{z-index:2}
+.poster-symbol{top:14%;text-shadow:0 5px 35px #05040b99}
+.movie-card{perspective:1000px;transform:translateZ(0);transition:transform .35s}
+.movie-card:hover{transform:translateY(-7px)}
+.movie-card:hover .poster{transform:rotateX(2deg) rotateY(-2deg) translateZ(8px);box-shadow:0 25px 55px #0008,0 0 0 1px #e57dff25}
+.movie-card:hover .poster-image{transform:scale(1.075);filter:saturate(1.12) contrast(1.04)}
+.movie-card:active .poster{transform:scale(.985)}
+.poster-play{box-shadow:0 0 0 8px #ffffff18,0 8px 30px #0008;backdrop-filter:blur(8px)}
+.section-heading h2 em,.page-intro h1 em{background:linear-gradient(100deg,#ff63ac,#b68bff 65%,#8adcf3);-webkit-background-clip:text;background-clip:text;color:transparent}
+.button,.nav-link,.text-link{transition:transform .25s,box-shadow .25s,background .25s}
+.button-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px #c84dbb40}
+.hero-orb{animation:aniplex-float 9s ease-in-out infinite}
+.orb-two{animation-delay:-4s}
+.hero-silhouette{animation:aniplex-drift 16s ease-in-out infinite alternate}
+@keyframes aniplex-float{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-14px,-22px,0) rotate(8deg)}}
+@keyframes aniplex-drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-12px,-8px,0) scale(1.025)}}
+.movie-dialog[open]{animation:dialog-enter .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes dialog-enter{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.dialog-poster{position:relative;overflow:hidden;box-shadow:0 15px 45px #0007}
+.dialog-poster img{object-fit:cover}
+@media(hover:none){.movie-card:hover{transform:none}.movie-card:hover .poster{transform:none}.movie-card:hover .poster-image{transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
