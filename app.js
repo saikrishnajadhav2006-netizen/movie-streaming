@@ -1753,17 +1753,6 @@ async function loadAnimePosters(){
  }));
 }
 
-function initTheme(){
- const saved=localStorage.getItem("aniplexTheme");
- const apply=theme=>{
-  document.body.dataset.theme=theme;
-  const button=$("#theme-toggle");
-  if(button){const light=theme==="light";button.textContent=light?"☾":"☀";button.setAttribute("aria-label",light?"Switch to dark mode":"Switch to light mode");button.title=light?"Switch to dark mode":"Switch to light mode";}
-  localStorage.setItem("aniplexTheme",theme);
- };
- apply(saved==="light"?"light":"dark");
- $("#theme-toggle")?.addEventListener("click",()=>apply(document.body.dataset.theme==="light"?"dark":"light"));
-}
 
 function initForms(){
  $("#register-form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTarget;const data=Object.fromEntries(new FormData(f));const msg=$("#register-message");msg.classList.remove("success");let error="";if(data.name.trim().length<2)error="Enter a name with at least 2 characters.";else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))error="Enter a valid email address.";else if(data.password.length<8)error="Password must contain at least 8 characters.";else if(data.password!==data.confirmPassword)error="Passwords do not match.";if(error){msg.textContent=error;return}const profiles=JSON.parse(localStorage.getItem("aniplexProfiles")||"[]");if(profiles.some(p=>p.email.toLowerCase()===data.email.toLowerCase())){msg.textContent="An account with this email already exists in this browser.";return}profiles.push({name:data.name.trim(),email:data.email,password:data.password});localStorage.setItem("aniplexProfiles",JSON.stringify(profiles));msg.textContent="Account created in this browser. You can sign in now.";msg.classList.add("success");f.reset();showToast("Welcome to Aniplex — account created!")});
@@ -1776,4 +1765,4 @@ $("#dialog-close").addEventListener("click",()=>$("#movie-dialog").close());$("#
 $("#menu-toggle").addEventListener("click",()=>{const open=$(".nav-links").classList.toggle("open");$("#menu-toggle").setAttribute("aria-expanded",String(open))});
 $("#search-toggle").addEventListener("click",()=>{navigate("catalogue");history.replaceState(null,"","#catalogue");$("#movie-search").focus()});
 window.addEventListener("hashchange",()=>navigate(location.hash.slice(1)||"home"));
-renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();initTheme();loadMoviePosters().then(loadBollywoodMovies);loadAnimePosters();navigate(location.hash.slice(1)||"home");
+renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();renderExperiments();initForms();loadMoviePosters().then(loadBollywoodMovies);loadAnimePosters();navigate(location.hash.slice(1)||"home");
