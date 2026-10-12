@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "books.dtd">
+<bookstore>
+  <book id="B101" category="web">
+    <title>Learning HTML and CSS</title>
+    <author>Alex Morgan</author>
+    <price currency="INR">499</price>
+    <year>2024</year>
+  </book>
+  <book id="B102" category="programming">
+    <title>JavaScript in Practice</title>
+    <author>Riya Sharma</author>
+    <price currency="INR">650</price>
+    <year>2025</year>
+  </book>
+  <book id="B103" category="data">
+    <title>Data Structures Made Clear</title>
+    <author>Sam Lee</author>
+    <price currency="INR">575</price>
+    <year>2023</year>
+  </book>
+</bookstore>
