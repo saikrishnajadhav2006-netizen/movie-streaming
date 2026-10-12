@@ -1650,19 +1650,24 @@ function openMovie(movie){
  $("#dialog-watch").href="https://www.justwatch.com/in/search?q="+encodeURIComponent(movie.title);$("#dialog-trailer").href="https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" "+movie.language+" official trailer");$("#dialog-watch").href="https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" "+movie.language+" full movie official");$("#dialog-watch").textContent="Find movie on YouTube ↗";dialog.showModal();
 }
 async function loadMoviePosters(){
- // Use only the image attached to the exact film article. Never substitute a
- // vaguely related search result, actor photo, or unrelated movie image.
+ // TMDB search is title/year matched so a different film's image is never used as a fallback.
+ const TMDB_API_KEY="6d8b16070fcc71ae643cb5e6ebf96c70";
+ const IMAGE_BASE="https://image.tmdb.org/t/p/w500";
+ const normalizeTitle=value=>(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
  async function lookupExactPoster(movie){
-  const endpoint="https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=700&titles="+encodeURIComponent(movie.wikiTitle);
   try{
-   const response=await fetch(endpoint);
-   if(!response.ok)return;
+   const url="https://api.themoviedb.org/3/search/movie?api_key="+encodeURIComponent(TMDB_API_KEY)+"&query="+encodeURIComponent(movie.title)+"&year="+encodeURIComponent(String(movie.year))+"&include_adult=false&region=IN";
+   const response=await fetch(url);
+   if(!response.ok){console.warn("TMDB poster request failed for "+movie.title+" (HTTP "+response.status+")");return;}
    const data=await response.json();
-   const page=Object.values(data.query?.pages||{})[0];
-   if(page?.thumbnail?.source)movie.posterUrl=page.thumbnail.source;
-  }catch(error){
-   console.warn("Exact film artwork lookup unavailable for "+movie.title,error);
-  }
+   const wanted=normalizeTitle(movie.title);
+   const match=(data.results||[]).find(item=>{
+    const titleMatches=normalizeTitle(item.title)===wanted||normalizeTitle(item.original_title)===wanted;
+    const releaseYear=Number((item.release_date||"").slice(0,4));
+    return titleMatches&&releaseYear===Number(movie.year)&&Boolean(item.poster_path);
+   });
+   if(match?.poster_path)movie.posterUrl=IMAGE_BASE+match.poster_path;
+  }catch(error){console.warn("TMDB poster lookup unavailable for "+movie.title,error);}
  }
  renderMovies("#featured-grid",movies.slice(0,4));renderCatalogue();
  let next=0;
