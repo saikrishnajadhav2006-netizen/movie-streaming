@@ -1,6 +1,1002 @@
 [
-  {"id":1,"title":"Moonlit Echo","genre":"Fantasy","year":2025,"rating":9.1},
-  {"id":2,"title":"Crimson Orbit","genre":"Sci-Fi","year":2024,"rating":8.8},
-  {"id":3,"title":"Paper Kingdom","genre":"Adventure","year":2025,"rating":9.3},
-  {"id":4,"title":"After the Rain","genre":"Drama","year":2023,"rating":8.6}
+  {
+    "id": 1,
+    "title": "Eega",
+    "language": "Telugu",
+    "year": 2012,
+    "genre": "Fantasy",
+    "cast": "Nani, S. S. Rajamouli",
+    "wikiTitle": "Eega (film)",
+    "description": "Eega is a fantasy film in Telugu. Cast: Nani, S. S. Rajamouli."
+  },
+  {
+    "id": 2,
+    "title": "Jersey",
+    "language": "Telugu",
+    "year": 2019,
+    "genre": "Drama",
+    "cast": "Nani, Shraddha Srinath",
+    "wikiTitle": "Jersey (2019 film)",
+    "description": "Jersey is a drama film in Telugu. Cast: Nani, Shraddha Srinath."
+  },
+  {
+    "id": 3,
+    "title": "Shyam Singha Roy",
+    "language": "Telugu",
+    "year": 2021,
+    "genre": "Drama",
+    "cast": "Nani, Sai Pallavi",
+    "wikiTitle": "Shyam Singha Roy",
+    "description": "Shyam Singha Roy is a drama film in Telugu. Cast: Nani, Sai Pallavi."
+  },
+  {
+    "id": 4,
+    "title": "Dasara",
+    "language": "Telugu",
+    "year": 2023,
+    "genre": "Action",
+    "cast": "Nani, Keerthy Suresh",
+    "wikiTitle": "Dasara (film)",
+    "description": "Dasara is a action film in Telugu. Cast: Nani, Keerthy Suresh."
+  },
+  {
+    "id": 5,
+    "title": "Hi Nanna",
+    "language": "Telugu",
+    "year": 2023,
+    "genre": "Drama",
+    "cast": "Nani, Mrunal Thakur",
+    "wikiTitle": "Hi Nanna",
+    "description": "Hi Nanna is a drama film in Telugu. Cast: Nani, Mrunal Thakur."
+  },
+  {
+    "id": 6,
+    "title": "Ante Sundaraniki",
+    "language": "Telugu",
+    "year": 2022,
+    "genre": "Comedy",
+    "cast": "Nani, Nazriya Nazim",
+    "wikiTitle": "Ante Sundaraniki",
+    "description": "Ante Sundaraniki is a comedy film in Telugu. Cast: Nani, Nazriya Nazim."
+  },
+  {
+    "id": 7,
+    "title": "Ninnu Kori",
+    "language": "Telugu",
+    "year": 2017,
+    "genre": "Romance",
+    "cast": "Nani, Nivetha Thomas",
+    "wikiTitle": "Ninnu Kori",
+    "description": "Ninnu Kori is a romance film in Telugu. Cast: Nani, Nivetha Thomas."
+  },
+  {
+    "id": 8,
+    "title": "Bhale Bhale Magadivoy",
+    "language": "Telugu",
+    "year": 2015,
+    "genre": "Comedy",
+    "cast": "Nani, Lavanya Tripathi",
+    "wikiTitle": "Bhale Bhale Magadivoy",
+    "description": "Bhale Bhale Magadivoy is a comedy film in Telugu. Cast: Nani, Lavanya Tripathi."
+  },
+  {
+    "id": 9,
+    "title": "Gentleman",
+    "language": "Telugu",
+    "year": 2016,
+    "genre": "Thriller",
+    "cast": "Nani, Surabhi",
+    "wikiTitle": "Gentleman (2016 Telugu film)",
+    "description": "Gentleman is a thriller film in Telugu. Cast: Nani, Surabhi."
+  },
+  {
+    "id": 10,
+    "title": "Ala Modalaindi",
+    "language": "Telugu",
+    "year": 2011,
+    "genre": "Romance",
+    "cast": "Nani, Nithya Menen",
+    "wikiTitle": "Ala Modalaindi",
+    "description": "Ala Modalaindi is a romance film in Telugu. Cast: Nani, Nithya Menen."
+  },
+  {
+    "id": 11,
+    "title": "Yevade Subramanyam",
+    "language": "Telugu",
+    "year": 2015,
+    "genre": "Drama",
+    "cast": "Nani, Vijay Deverakonda",
+    "wikiTitle": "Yevade Subramanyam",
+    "description": "Yevade Subramanyam is a drama film in Telugu. Cast: Nani, Vijay Deverakonda."
+  },
+  {
+    "id": 12,
+    "title": "Pilla Zamindar",
+    "language": "Telugu",
+    "year": 2011,
+    "genre": "Comedy",
+    "cast": "Nani, Haripriya",
+    "wikiTitle": "Pilla Zamindar",
+    "description": "Pilla Zamindar is a comedy film in Telugu. Cast: Nani, Haripriya."
+  },
+  {
+    "id": 13,
+    "title": "Majnu",
+    "language": "Telugu",
+    "year": 2016,
+    "genre": "Romance",
+    "cast": "Nani, Anu Emmanuel",
+    "wikiTitle": "Majnu (2016 film)",
+    "description": "Majnu is a romance film in Telugu. Cast: Nani, Anu Emmanuel."
+  },
+  {
+    "id": 14,
+    "title": "Gang Leader",
+    "language": "Telugu",
+    "year": 2019,
+    "genre": "Comedy",
+    "cast": "Nani, Priyanka Arul Mohan",
+    "wikiTitle": "Gang Leader (2019 film)",
+    "description": "Gang Leader is a comedy film in Telugu. Cast: Nani, Priyanka Arul Mohan."
+  },
+  {
+    "id": 15,
+    "title": "Tuck Jagadish",
+    "language": "Telugu",
+    "year": 2021,
+    "genre": "Drama",
+    "cast": "Nani, Ritu Varma",
+    "wikiTitle": "Tuck Jagadish",
+    "description": "Tuck Jagadish is a drama film in Telugu. Cast: Nani, Ritu Varma."
+  },
+  {
+    "id": 16,
+    "title": "Saripodhaa Sanivaaram",
+    "language": "Telugu",
+    "year": 2024,
+    "genre": "Action",
+    "cast": "Nani, S. J. Suryah",
+    "wikiTitle": "Saripodhaa Sanivaaram",
+    "description": "Saripodhaa Sanivaaram is a action film in Telugu. Cast: Nani, S. J. Suryah."
+  },
+  {
+    "id": 17,
+    "title": "HIT: The First Case",
+    "language": "Telugu",
+    "year": 2020,
+    "genre": "Thriller",
+    "cast": "Vishwak Sen, Ruhani Sharma",
+    "wikiTitle": "HIT: The First Case",
+    "description": "HIT: The First Case is a thriller film in Telugu. Cast: Vishwak Sen, Ruhani Sharma."
+  },
+  {
+    "id": 18,
+    "title": "HIT: The Second Case",
+    "language": "Telugu",
+    "year": 2022,
+    "genre": "Thriller",
+    "cast": "Adivi Sesh, Meenakshi Chaudhary",
+    "wikiTitle": "HIT: The Second Case",
+    "description": "HIT: The Second Case is a thriller film in Telugu. Cast: Adivi Sesh, Meenakshi Chaudhary."
+  },
+  {
+    "id": 19,
+    "title": "Baahubali: The Beginning",
+    "language": "Telugu",
+    "year": 2015,
+    "genre": "Action",
+    "cast": "Prabhas, Rana Daggubati",
+    "wikiTitle": "Baahubali: The Beginning",
+    "description": "Baahubali: The Beginning is a action film in Telugu. Cast: Prabhas, Rana Daggubati."
+  },
+  {
+    "id": 20,
+    "title": "Baahubali 2: The Conclusion",
+    "language": "Telugu",
+    "year": 2017,
+    "genre": "Action",
+    "cast": "Prabhas, Rana Daggubati",
+    "wikiTitle": "Baahubali 2: The Conclusion",
+    "description": "Baahubali 2: The Conclusion is a action film in Telugu. Cast: Prabhas, Rana Daggubati."
+  },
+  {
+    "id": 21,
+    "title": "Salaar: Part 1 – Ceasefire",
+    "language": "Telugu",
+    "year": 2023,
+    "genre": "Action",
+    "cast": "Prabhas, Prithviraj Sukumaran",
+    "wikiTitle": "Salaar: Part 1 – Ceasefire",
+    "description": "Salaar: Part 1 – Ceasefire is a action film in Telugu. Cast: Prabhas, Prithviraj Sukumaran."
+  },
+  {
+    "id": 22,
+    "title": "Kalki 2898 AD",
+    "language": "Telugu",
+    "year": 2024,
+    "genre": "Sci-Fi",
+    "cast": "Prabhas, Deepika Padukone",
+    "wikiTitle": "Kalki 2898 AD",
+    "description": "Kalki 2898 AD is a sci-fi film in Telugu. Cast: Prabhas, Deepika Padukone."
+  },
+  {
+    "id": 23,
+    "title": "Mirchi",
+    "language": "Telugu",
+    "year": 2013,
+    "genre": "Action",
+    "cast": "Prabhas, Anushka Shetty",
+    "wikiTitle": "Mirchi (film)",
+    "description": "Mirchi is a action film in Telugu. Cast: Prabhas, Anushka Shetty."
+  },
+  {
+    "id": 24,
+    "title": "Darling",
+    "language": "Telugu",
+    "year": 2010,
+    "genre": "Romance",
+    "cast": "Prabhas, Kajal Aggarwal",
+    "wikiTitle": "Darling (2010 film)",
+    "description": "Darling is a romance film in Telugu. Cast: Prabhas, Kajal Aggarwal."
+  },
+  {
+    "id": 25,
+    "title": "Chatrapathi",
+    "language": "Telugu",
+    "year": 2005,
+    "genre": "Action",
+    "cast": "Prabhas, Shriya Saran",
+    "wikiTitle": "Chatrapathi (2005 film)",
+    "description": "Chatrapathi is a action film in Telugu. Cast: Prabhas, Shriya Saran."
+  },
+  {
+    "id": 26,
+    "title": "Mr. Perfect",
+    "language": "Telugu",
+    "year": 2011,
+    "genre": "Romance",
+    "cast": "Prabhas, Kajal Aggarwal",
+    "wikiTitle": "Mr. Perfect",
+    "description": "Mr. Perfect is a romance film in Telugu. Cast: Prabhas, Kajal Aggarwal."
+  },
+  {
+    "id": 27,
+    "title": "Radhe Shyam",
+    "language": "Telugu",
+    "year": 2022,
+    "genre": "Romance",
+    "cast": "Prabhas, Pooja Hegde",
+    "wikiTitle": "Radhe Shyam",
+    "description": "Radhe Shyam is a romance film in Telugu. Cast: Prabhas, Pooja Hegde."
+  },
+  {
+    "id": 28,
+    "title": "Saaho",
+    "language": "Telugu",
+    "year": 2019,
+    "genre": "Action",
+    "cast": "Prabhas, Shraddha Kapoor",
+    "wikiTitle": "Saaho",
+    "description": "Saaho is a action film in Telugu. Cast: Prabhas, Shraddha Kapoor."
+  },
+  {
+    "id": 29,
+    "title": "Varsham",
+    "language": "Telugu",
+    "year": 2004,
+    "genre": "Romance",
+    "cast": "Prabhas, Trisha",
+    "wikiTitle": "Varsham",
+    "description": "Varsham is a romance film in Telugu. Cast: Prabhas, Trisha."
+  },
+  {
+    "id": 30,
+    "title": "Billa",
+    "language": "Telugu",
+    "year": 2009,
+    "genre": "Action",
+    "cast": "Prabhas, Anushka Shetty",
+    "wikiTitle": "Billa (2009 Telugu film)",
+    "description": "Billa is a action film in Telugu. Cast: Prabhas, Anushka Shetty."
+  },
+  {
+    "id": 31,
+    "title": "RRR",
+    "language": "Telugu",
+    "year": 2022,
+    "genre": "Action",
+    "cast": "N. T. Rama Rao Jr., Ram Charan",
+    "wikiTitle": "RRR",
+    "description": "RRR is a action film in Telugu. Cast: N. T. Rama Rao Jr., Ram Charan."
+  },
+  {
+    "id": 32,
+    "title": "Pushpa: The Rise",
+    "language": "Telugu",
+    "year": 2021,
+    "genre": "Action",
+    "cast": "Allu Arjun, Rashmika Mandanna",
+    "wikiTitle": "Pushpa: The Rise",
+    "description": "Pushpa: The Rise is a action film in Telugu. Cast: Allu Arjun, Rashmika Mandanna."
+  },
+  {
+    "id": 33,
+    "title": "Rangasthalam",
+    "language": "Telugu",
+    "year": 2018,
+    "genre": "Drama",
+    "cast": "Ram Charan, Samantha Ruth Prabhu",
+    "wikiTitle": "Rangasthalam",
+    "description": "Rangasthalam is a drama film in Telugu. Cast: Ram Charan, Samantha Ruth Prabhu."
+  },
+  {
+    "id": 34,
+    "title": "Arjun Reddy",
+    "language": "Telugu",
+    "year": 2017,
+    "genre": "Drama",
+    "cast": "Vijay Deverakonda, Shalini Pandey",
+    "wikiTitle": "Arjun Reddy",
+    "description": "Arjun Reddy is a drama film in Telugu. Cast: Vijay Deverakonda, Shalini Pandey."
+  },
+  {
+    "id": 35,
+    "title": "Magadheera",
+    "language": "Telugu",
+    "year": 2009,
+    "genre": "Fantasy",
+    "cast": "Ram Charan, Kajal Aggarwal",
+    "wikiTitle": "Magadheera",
+    "description": "Magadheera is a fantasy film in Telugu. Cast: Ram Charan, Kajal Aggarwal."
+  },
+  {
+    "id": 36,
+    "title": "Pokiri",
+    "language": "Telugu",
+    "year": 2006,
+    "genre": "Action",
+    "cast": "Mahesh Babu, Ileana D'Cruz",
+    "wikiTitle": "Pokiri",
+    "description": "Pokiri is a action film in Telugu. Cast: Mahesh Babu, Ileana D'Cruz."
+  },
+  {
+    "id": 37,
+    "title": "Athadu",
+    "language": "Telugu",
+    "year": 2005,
+    "genre": "Thriller",
+    "cast": "Mahesh Babu, Trisha",
+    "wikiTitle": "Athadu",
+    "description": "Athadu is a thriller film in Telugu. Cast: Mahesh Babu, Trisha."
+  },
+  {
+    "id": 38,
+    "title": "Sita Ramam",
+    "language": "Telugu",
+    "year": 2022,
+    "genre": "Romance",
+    "cast": "Dulquer Salmaan, Mrunal Thakur",
+    "wikiTitle": "Sita Ramam",
+    "description": "Sita Ramam is a romance film in Telugu. Cast: Dulquer Salmaan, Mrunal Thakur."
+  },
+  {
+    "id": 39,
+    "title": "Major",
+    "language": "Telugu",
+    "year": 2022,
+    "genre": "Drama",
+    "cast": "Adivi Sesh, Saiee Manjrekar",
+    "wikiTitle": "Major (film)",
+    "description": "Major is a drama film in Telugu. Cast: Adivi Sesh, Saiee Manjrekar."
+  },
+  {
+    "id": 40,
+    "title": "Karthikeya 2",
+    "language": "Telugu",
+    "year": 2022,
+    "genre": "Adventure",
+    "cast": "Nikhil Siddhartha, Anupama Parameswaran",
+    "wikiTitle": "Karthikeya 2",
+    "description": "Karthikeya 2 is a adventure film in Telugu. Cast: Nikhil Siddhartha, Anupama Parameswaran."
+  },
+  {
+    "id": 41,
+    "title": "Hanu-Man",
+    "language": "Telugu",
+    "year": 2024,
+    "genre": "Fantasy",
+    "cast": "Teja Sajja, Amritha Aiyer",
+    "wikiTitle": "Hanu-Man (film)",
+    "description": "Hanu-Man is a fantasy film in Telugu. Cast: Teja Sajja, Amritha Aiyer."
+  },
+  {
+    "id": 42,
+    "title": "Fidaa",
+    "language": "Telugu",
+    "year": 2017,
+    "genre": "Romance",
+    "cast": "Varun Tej, Sai Pallavi",
+    "wikiTitle": "Fidaa",
+    "description": "Fidaa is a romance film in Telugu. Cast: Varun Tej, Sai Pallavi."
+  },
+  {
+    "id": 43,
+    "title": "Mahanati",
+    "language": "Telugu",
+    "year": 2018,
+    "genre": "Biography",
+    "cast": "Keerthy Suresh, Dulquer Salmaan",
+    "wikiTitle": "Mahanati",
+    "description": "Mahanati is a biography film in Telugu. Cast: Keerthy Suresh, Dulquer Salmaan."
+  },
+  {
+    "id": 44,
+    "title": "Pelli Choopulu",
+    "language": "Telugu",
+    "year": 2016,
+    "genre": "Romance",
+    "cast": "Vijay Deverakonda, Ritu Varma",
+    "wikiTitle": "Pelli Choopulu",
+    "description": "Pelli Choopulu is a romance film in Telugu. Cast: Vijay Deverakonda, Ritu Varma."
+  },
+  {
+    "id": 45,
+    "title": "Goodachari",
+    "language": "Telugu",
+    "year": 2018,
+    "genre": "Thriller",
+    "cast": "Adivi Sesh, Sobhita Dhulipala",
+    "wikiTitle": "Goodachari",
+    "description": "Goodachari is a thriller film in Telugu. Cast: Adivi Sesh, Sobhita Dhulipala."
+  },
+  {
+    "id": 46,
+    "title": "Agent Sai Srinivasa Athreya",
+    "language": "Telugu",
+    "year": 2019,
+    "genre": "Mystery",
+    "cast": "Naveen Polishetty, Shruti Sharma",
+    "wikiTitle": "Agent Sai Srinivasa Athreya",
+    "description": "Agent Sai Srinivasa Athreya is a mystery film in Telugu. Cast: Naveen Polishetty, Shruti Sharma."
+  },
+  {
+    "id": 47,
+    "title": "Vikram",
+    "language": "Tamil",
+    "year": 2022,
+    "genre": "Action",
+    "cast": "Kamal Haasan, Vijay Sethupathi",
+    "wikiTitle": "Vikram (2022 film)",
+    "description": "Vikram is a action film in Tamil. Cast: Kamal Haasan, Vijay Sethupathi."
+  },
+  {
+    "id": 48,
+    "title": "Jailer",
+    "language": "Tamil",
+    "year": 2023,
+    "genre": "Action",
+    "cast": "Rajinikanth, Ramya Krishnan",
+    "wikiTitle": "Jailer (2023 Tamil film)",
+    "description": "Jailer is a action film in Tamil. Cast: Rajinikanth, Ramya Krishnan."
+  },
+  {
+    "id": 49,
+    "title": "Ponniyin Selvan: I",
+    "language": "Tamil",
+    "year": 2022,
+    "genre": "Adventure",
+    "cast": "Vikram, Aishwarya Rai Bachchan",
+    "wikiTitle": "Ponniyin Selvan: I",
+    "description": "Ponniyin Selvan: I is a adventure film in Tamil. Cast: Vikram, Aishwarya Rai Bachchan."
+  },
+  {
+    "id": 50,
+    "title": "Ponniyin Selvan: II",
+    "language": "Tamil",
+    "year": 2023,
+    "genre": "Adventure",
+    "cast": "Vikram, Aishwarya Rai Bachchan",
+    "wikiTitle": "Ponniyin Selvan: II",
+    "description": "Ponniyin Selvan: II is a adventure film in Tamil. Cast: Vikram, Aishwarya Rai Bachchan."
+  },
+  {
+    "id": 51,
+    "title": "Jai Bhim",
+    "language": "Tamil",
+    "year": 2021,
+    "genre": "Drama",
+    "cast": "Suriya, Lijomol Jose",
+    "wikiTitle": "Jai Bhim",
+    "description": "Jai Bhim is a drama film in Tamil. Cast: Suriya, Lijomol Jose."
+  },
+  {
+    "id": 52,
+    "title": "Soorarai Pottru",
+    "language": "Tamil",
+    "year": 2020,
+    "genre": "Drama",
+    "cast": "Suriya, Aparna Balamurali",
+    "wikiTitle": "Soorarai Pottru",
+    "description": "Soorarai Pottru is a drama film in Tamil. Cast: Suriya, Aparna Balamurali."
+  },
+  {
+    "id": 53,
+    "title": "96",
+    "language": "Tamil",
+    "year": 2018,
+    "genre": "Romance",
+    "cast": "Vijay Sethupathi, Trisha",
+    "wikiTitle": "96 (2018 film)",
+    "description": "96 is a romance film in Tamil. Cast: Vijay Sethupathi, Trisha."
+  },
+  {
+    "id": 54,
+    "title": "Kaithi",
+    "language": "Tamil",
+    "year": 2019,
+    "genre": "Action",
+    "cast": "Karthi, Narain",
+    "wikiTitle": "Kaithi (2019 film)",
+    "description": "Kaithi is a action film in Tamil. Cast: Karthi, Narain."
+  },
+  {
+    "id": 55,
+    "title": "Asuran",
+    "language": "Tamil",
+    "year": 2019,
+    "genre": "Action",
+    "cast": "Dhanush, Manju Warrier",
+    "wikiTitle": "Asuran (2019 film)",
+    "description": "Asuran is a action film in Tamil. Cast: Dhanush, Manju Warrier."
+  },
+  {
+    "id": 56,
+    "title": "Enthiran",
+    "language": "Tamil",
+    "year": 2010,
+    "genre": "Sci-Fi",
+    "cast": "Rajinikanth, Aishwarya Rai Bachchan",
+    "wikiTitle": "Enthiran",
+    "description": "Enthiran is a sci-fi film in Tamil. Cast: Rajinikanth, Aishwarya Rai Bachchan."
+  },
+  {
+    "id": 57,
+    "title": "Maharaja",
+    "language": "Tamil",
+    "year": 2024,
+    "genre": "Thriller",
+    "cast": "Vijay Sethupathi, Anurag Kashyap",
+    "wikiTitle": "Maharaja (2024 film)",
+    "description": "Maharaja is a thriller film in Tamil. Cast: Vijay Sethupathi, Anurag Kashyap."
+  },
+  {
+    "id": 58,
+    "title": "Leo",
+    "language": "Tamil",
+    "year": 2023,
+    "genre": "Action",
+    "cast": "Vijay, Trisha",
+    "wikiTitle": "Leo (2023 Indian film)",
+    "description": "Leo is a action film in Tamil. Cast: Vijay, Trisha."
+  },
+  {
+    "id": 59,
+    "title": "Super Deluxe",
+    "language": "Tamil",
+    "year": 2019,
+    "genre": "Drama",
+    "cast": "Vijay Sethupathi, Fahadh Faasil",
+    "wikiTitle": "Super Deluxe (film)",
+    "description": "Super Deluxe is a drama film in Tamil. Cast: Vijay Sethupathi, Fahadh Faasil."
+  },
+  {
+    "id": 60,
+    "title": "Kantara",
+    "language": "Kannada",
+    "year": 2022,
+    "genre": "Action",
+    "cast": "Rishab Shetty, Sapthami Gowda",
+    "wikiTitle": "Kantara (film)",
+    "description": "Kantara is a action film in Kannada. Cast: Rishab Shetty, Sapthami Gowda."
+  },
+  {
+    "id": 61,
+    "title": "KGF: Chapter 1",
+    "language": "Kannada",
+    "year": 2018,
+    "genre": "Action",
+    "cast": "Yash, Srinidhi Shetty",
+    "wikiTitle": "K.G.F: Chapter 1",
+    "description": "KGF: Chapter 1 is a action film in Kannada. Cast: Yash, Srinidhi Shetty."
+  },
+  {
+    "id": 62,
+    "title": "KGF: Chapter 2",
+    "language": "Kannada",
+    "year": 2022,
+    "genre": "Action",
+    "cast": "Yash, Sanjay Dutt",
+    "wikiTitle": "K.G.F: Chapter 2",
+    "description": "KGF: Chapter 2 is a action film in Kannada. Cast: Yash, Sanjay Dutt."
+  },
+  {
+    "id": 63,
+    "title": "777 Charlie",
+    "language": "Kannada",
+    "year": 2022,
+    "genre": "Drama",
+    "cast": "Rakshit Shetty, Charlie",
+    "wikiTitle": "777 Charlie",
+    "description": "777 Charlie is a drama film in Kannada. Cast: Rakshit Shetty, Charlie."
+  },
+  {
+    "id": 64,
+    "title": "U Turn",
+    "language": "Kannada",
+    "year": 2016,
+    "genre": "Thriller",
+    "cast": "Shraddha Srinath, Roger Narayan",
+    "wikiTitle": "U Turn (2016 film)",
+    "description": "U Turn is a thriller film in Kannada. Cast: Shraddha Srinath, Roger Narayan."
+  },
+  {
+    "id": 65,
+    "title": "Sapta Sagaradaache Ello – Side A",
+    "language": "Kannada",
+    "year": 2023,
+    "genre": "Romance",
+    "cast": "Rakshit Shetty, Rukmini Vasanth",
+    "wikiTitle": "Sapta Sagaradaache Ello",
+    "description": "Sapta Sagaradaache Ello – Side A is a romance film in Kannada. Cast: Rakshit Shetty, Rukmini Vasanth."
+  },
+  {
+    "id": 66,
+    "title": "Kirik Party",
+    "language": "Kannada",
+    "year": 2016,
+    "genre": "Comedy",
+    "cast": "Rakshit Shetty, Rashmika Mandanna",
+    "wikiTitle": "Kirik Party",
+    "description": "Kirik Party is a comedy film in Kannada. Cast: Rakshit Shetty, Rashmika Mandanna."
+  },
+  {
+    "id": 67,
+    "title": "Lucia",
+    "language": "Kannada",
+    "year": 2013,
+    "genre": "Thriller",
+    "cast": "Sathish Ninasam, Sruthi Hariharan",
+    "wikiTitle": "Lucia (2013 film)",
+    "description": "Lucia is a thriller film in Kannada. Cast: Sathish Ninasam, Sruthi Hariharan."
+  },
+  {
+    "id": 68,
+    "title": "Avane Srimannarayana",
+    "language": "Kannada",
+    "year": 2019,
+    "genre": "Adventure",
+    "cast": "Rakshit Shetty, Shanvi Srivastava",
+    "wikiTitle": "Avane Srimannarayana",
+    "description": "Avane Srimannarayana is a adventure film in Kannada. Cast: Rakshit Shetty, Shanvi Srivastava."
+  },
+  {
+    "id": 69,
+    "title": "Drishya",
+    "language": "Kannada",
+    "year": 2014,
+    "genre": "Thriller",
+    "cast": "Ravichandran, Navya Nair",
+    "wikiTitle": "Drishya",
+    "description": "Drishya is a thriller film in Kannada. Cast: Ravichandran, Navya Nair."
+  },
+  {
+    "id": 70,
+    "title": "Manjummel Boys",
+    "language": "Malayalam",
+    "year": 2024,
+    "genre": "Thriller",
+    "cast": "Soubin Shahir, Sreenath Bhasi",
+    "wikiTitle": "Manjummel Boys",
+    "description": "Manjummel Boys is a thriller film in Malayalam. Cast: Soubin Shahir, Sreenath Bhasi."
+  },
+  {
+    "id": 71,
+    "title": "Premam",
+    "language": "Malayalam",
+    "year": 2015,
+    "genre": "Romance",
+    "cast": "Nivin Pauly, Sai Pallavi",
+    "wikiTitle": "Premam (2015 film)",
+    "description": "Premam is a romance film in Malayalam. Cast: Nivin Pauly, Sai Pallavi."
+  },
+  {
+    "id": 72,
+    "title": "Bangalore Days",
+    "language": "Malayalam",
+    "year": 2014,
+    "genre": "Drama",
+    "cast": "Dulquer Salmaan, Nivin Pauly",
+    "wikiTitle": "Bangalore Days",
+    "description": "Bangalore Days is a drama film in Malayalam. Cast: Dulquer Salmaan, Nivin Pauly."
+  },
+  {
+    "id": 73,
+    "title": "Drishyam",
+    "language": "Malayalam",
+    "year": 2013,
+    "genre": "Thriller",
+    "cast": "Mohanlal, Meena",
+    "wikiTitle": "Drishyam",
+    "description": "Drishyam is a thriller film in Malayalam. Cast: Mohanlal, Meena."
+  },
+  {
+    "id": 74,
+    "title": "Kumbalangi Nights",
+    "language": "Malayalam",
+    "year": 2019,
+    "genre": "Drama",
+    "cast": "Fahadh Faasil, Soubin Shahir",
+    "wikiTitle": "Kumbalangi Nights",
+    "description": "Kumbalangi Nights is a drama film in Malayalam. Cast: Fahadh Faasil, Soubin Shahir."
+  },
+  {
+    "id": 75,
+    "title": "2018",
+    "language": "Malayalam",
+    "year": 2023,
+    "genre": "Drama",
+    "cast": "Tovino Thomas, Kunchacko Boban",
+    "wikiTitle": "2018 (film)",
+    "description": "2018 is a drama film in Malayalam. Cast: Tovino Thomas, Kunchacko Boban."
+  },
+  {
+    "id": 76,
+    "title": "Aavesham",
+    "language": "Malayalam",
+    "year": 2024,
+    "genre": "Action",
+    "cast": "Fahadh Faasil, Sajin Gopu",
+    "wikiTitle": "Aavesham (2024 film)",
+    "description": "Aavesham is a action film in Malayalam. Cast: Fahadh Faasil, Sajin Gopu."
+  },
+  {
+    "id": 77,
+    "title": "Ustad Hotel",
+    "language": "Malayalam",
+    "year": 2012,
+    "genre": "Drama",
+    "cast": "Dulquer Salmaan, Thilakan",
+    "wikiTitle": "Ustad Hotel",
+    "description": "Ustad Hotel is a drama film in Malayalam. Cast: Dulquer Salmaan, Thilakan."
+  },
+  {
+    "id": 78,
+    "title": "Charlie",
+    "language": "Malayalam",
+    "year": 2015,
+    "genre": "Adventure",
+    "cast": "Dulquer Salmaan, Parvathy Thiruvothu",
+    "wikiTitle": "Charlie (2015 Malayalam film)",
+    "description": "Charlie is a adventure film in Malayalam. Cast: Dulquer Salmaan, Parvathy Thiruvothu."
+  },
+  {
+    "id": 79,
+    "title": "Take Off",
+    "language": "Malayalam",
+    "year": 2017,
+    "genre": "Drama",
+    "cast": "Parvathy Thiruvothu, Fahadh Faasil",
+    "wikiTitle": "Take Off (2017 film)",
+    "description": "Take Off is a drama film in Malayalam. Cast: Parvathy Thiruvothu, Fahadh Faasil."
+  },
+  {
+    "id": 80,
+    "title": "The Great Indian Kitchen",
+    "language": "Malayalam",
+    "year": 2021,
+    "genre": "Drama",
+    "cast": "Nimisha Sajayan, Suraj Venjaramoodu",
+    "wikiTitle": "The Great Indian Kitchen",
+    "description": "The Great Indian Kitchen is a drama film in Malayalam. Cast: Nimisha Sajayan, Suraj Venjaramoodu."
+  },
+  {
+    "id": 81,
+    "title": "Nayattu",
+    "language": "Malayalam",
+    "year": 2021,
+    "genre": "Thriller",
+    "cast": "Kunchacko Boban, Joju George",
+    "wikiTitle": "Nayattu",
+    "description": "Nayattu is a thriller film in Malayalam. Cast: Kunchacko Boban, Joju George."
+  },
+  {
+    "id": 82,
+    "title": "Dangal",
+    "language": "Hindi",
+    "year": 2016,
+    "genre": "Drama",
+    "cast": "Aamir Khan, Fatima Sana Shaikh",
+    "wikiTitle": "Dangal (film)",
+    "description": "Dangal is a drama film in Hindi. Cast: Aamir Khan, Fatima Sana Shaikh."
+  },
+  {
+    "id": 83,
+    "title": "3 Idiots",
+    "language": "Hindi",
+    "year": 2009,
+    "genre": "Comedy",
+    "cast": "Aamir Khan, R. Madhavan",
+    "wikiTitle": "3 Idiots",
+    "description": "3 Idiots is a comedy film in Hindi. Cast: Aamir Khan, R. Madhavan."
+  },
+  {
+    "id": 84,
+    "title": "Lagaan",
+    "language": "Hindi",
+    "year": 2001,
+    "genre": "Drama",
+    "cast": "Aamir Khan, Gracy Singh",
+    "wikiTitle": "Lagaan",
+    "description": "Lagaan is a drama film in Hindi. Cast: Aamir Khan, Gracy Singh."
+  },
+  {
+    "id": 85,
+    "title": "Gully Boy",
+    "language": "Hindi",
+    "year": 2019,
+    "genre": "Drama",
+    "cast": "Ranveer Singh, Alia Bhatt",
+    "wikiTitle": "Gully Boy",
+    "description": "Gully Boy is a drama film in Hindi. Cast: Ranveer Singh, Alia Bhatt."
+  },
+  {
+    "id": 86,
+    "title": "Queen",
+    "language": "Hindi",
+    "year": 2013,
+    "genre": "Comedy",
+    "cast": "Kangana Ranaut, Rajkummar Rao",
+    "wikiTitle": "Queen (2013 film)",
+    "description": "Queen is a comedy film in Hindi. Cast: Kangana Ranaut, Rajkummar Rao."
+  },
+  {
+    "id": 87,
+    "title": "Andhadhun",
+    "language": "Hindi",
+    "year": 2018,
+    "genre": "Thriller",
+    "cast": "Ayushmann Khurrana, Tabu",
+    "wikiTitle": "Andhadhun",
+    "description": "Andhadhun is a thriller film in Hindi. Cast: Ayushmann Khurrana, Tabu."
+  },
+  {
+    "id": 88,
+    "title": "12th Fail",
+    "language": "Hindi",
+    "year": 2023,
+    "genre": "Drama",
+    "cast": "Vikrant Massey, Medha Shankar",
+    "wikiTitle": "12th Fail",
+    "description": "12th Fail is a drama film in Hindi. Cast: Vikrant Massey, Medha Shankar."
+  },
+  {
+    "id": 89,
+    "title": "Zindagi Na Milegi Dobara",
+    "language": "Hindi",
+    "year": 2011,
+    "genre": "Comedy",
+    "cast": "Hrithik Roshan, Farhan Akhtar",
+    "wikiTitle": "Zindagi Na Milegi Dobara",
+    "description": "Zindagi Na Milegi Dobara is a comedy film in Hindi. Cast: Hrithik Roshan, Farhan Akhtar."
+  },
+  {
+    "id": 90,
+    "title": "Taare Zameen Par",
+    "language": "Hindi",
+    "year": 2007,
+    "genre": "Drama",
+    "cast": "Aamir Khan, Darsheel Safary",
+    "wikiTitle": "Taare Zameen Par",
+    "description": "Taare Zameen Par is a drama film in Hindi. Cast: Aamir Khan, Darsheel Safary."
+  },
+  {
+    "id": 91,
+    "title": "Chak De! India",
+    "language": "Hindi",
+    "year": 2007,
+    "genre": "Drama",
+    "cast": "Shah Rukh Khan, Vidya Malvade",
+    "wikiTitle": "Chak De! India",
+    "description": "Chak De! India is a drama film in Hindi. Cast: Shah Rukh Khan, Vidya Malvade."
+  },
+  {
+    "id": 92,
+    "title": "Pather Panchali",
+    "language": "Bengali",
+    "year": 1955,
+    "genre": "Drama",
+    "cast": "Kanu Banerjee, Karuna Banerjee",
+    "wikiTitle": "Pather Panchali",
+    "description": "Pather Panchali is a drama film in Bengali. Cast: Kanu Banerjee, Karuna Banerjee."
+  },
+  {
+    "id": 93,
+    "title": "Bhooter Bhabishyat",
+    "language": "Bengali",
+    "year": 2012,
+    "genre": "Comedy",
+    "cast": "Parambrata Chatterjee, Sabyasachi Chakrabarty",
+    "wikiTitle": "Bhooter Bhabishyat",
+    "description": "Bhooter Bhabishyat is a comedy film in Bengali. Cast: Parambrata Chatterjee, Sabyasachi Chakrabarty."
+  },
+  {
+    "id": 94,
+    "title": "Sairat",
+    "language": "Marathi",
+    "year": 2016,
+    "genre": "Romance",
+    "cast": "Rinku Rajguru, Akash Thosar",
+    "wikiTitle": "Sairat",
+    "description": "Sairat is a romance film in Marathi. Cast: Rinku Rajguru, Akash Thosar."
+  },
+  {
+    "id": 95,
+    "title": "Natsamrat",
+    "language": "Marathi",
+    "year": 2016,
+    "genre": "Drama",
+    "cast": "Nana Patekar, Medha Manjrekar",
+    "wikiTitle": "Natsamrat",
+    "description": "Natsamrat is a drama film in Marathi. Cast: Nana Patekar, Medha Manjrekar."
+  },
+  {
+    "id": 96,
+    "title": "Harishchandrachi Factory",
+    "language": "Marathi",
+    "year": 2009,
+    "genre": "Biography",
+    "cast": "Nandu Madhav, Vibhawari Deshpande",
+    "wikiTitle": "Harishchandrachi Factory",
+    "description": "Harishchandrachi Factory is a biography film in Marathi. Cast: Nandu Madhav, Vibhawari Deshpande."
+  },
+  {
+    "id": 97,
+    "title": "Chal Mera Putt",
+    "language": "Punjabi",
+    "year": 2019,
+    "genre": "Comedy",
+    "cast": "Amrinder Gill, Simi Chahal",
+    "wikiTitle": "Chal Mera Putt",
+    "description": "Chal Mera Putt is a comedy film in Punjabi. Cast: Amrinder Gill, Simi Chahal."
+  },
+  {
+    "id": 98,
+    "title": "Qismat",
+    "language": "Punjabi",
+    "year": 2018,
+    "genre": "Romance",
+    "cast": "Ammy Virk, Sargun Mehta",
+    "wikiTitle": "Qismat (film)",
+    "description": "Qismat is a romance film in Punjabi. Cast: Ammy Virk, Sargun Mehta."
+  },
+  {
+    "id": 99,
+    "title": "Aamis",
+    "language": "Assamese",
+    "year": 2019,
+    "genre": "Drama",
+    "cast": "Lima Das, Arghadeep Baruah",
+    "wikiTitle": "Aamis",
+    "description": "Aamis is a drama film in Assamese. Cast: Lima Das, Arghadeep Baruah."
+  },
+  {
+    "id": 100,
+    "title": "Pratikshya",
+    "language": "Odia",
+    "year": 2022,
+    "genre": "Drama",
+    "cast": "Dipen Patra, Barsha Patnaik",
+    "wikiTitle": "Pratikshya",
+    "description": "Pratikshya is a drama film in Odia. Cast: Dipen Patra, Barsha Patnaik."
+  }
 ]
